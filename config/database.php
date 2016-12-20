@@ -3,10 +3,10 @@
 return [
     'database'=>[
         'master' => [
-            'host' => '120.27.143.217',
+            'host' => '127.0.0.1',
             'port' => 3306,
-            'user' => 'jeekzx',
-            'password' => '7f331f',
+            'user' => 'test',
+            'password' => '123456',
             'database' => 'test',
             'asyn_max_count' => 4,
             'start_count' => 0,
