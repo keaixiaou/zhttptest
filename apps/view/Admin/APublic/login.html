@@ -1,0 +1,95 @@
+<!doctype html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <title>『<?php echo (config('admin',"BACKGROUND_TITLE")); ?>』</title>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/Admin/Css/ionicons.min.css" rel="stylesheet">
+    <link href="/public/Admin/Css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/Admin/Css/simplify.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/public/JqueryUI/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/public/JqueryUI/themes/base/jquery-ui-timepicker-addon.css" />
+    <link rel="stylesheet" type="text/css" href="/public/JqueryUI/themes/base/jquery.ui.accordion.css" />
+    <link rel="stylesheet" type="text/css" href="/public/Chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="/public/Admin/Css/style.css" />
+
+</head>
+
+<body>
+
+<div class="login_top"><img src="/public/Admin/Images/login.jpg" /></div>
+
+<div class="login_main">
+
+    <h2 class="login_title"><?php echo (config('admin',"BACKGROUND_TITLE")); ?></h2>
+
+    <form id="frm_login" method="post" action="/Admin/APublic/checkLogin/">
+        <table id="tbl_login">
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" name="account" class="login_ipt_1" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>密　码：</td>
+                <td><input type="password" name="password" class="login_ipt_1" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>验证码：</td>
+                <td>
+                    <input type="text" name="verify" class="login_ipt_2" required />
+                    <img id="verifyImg" src="/Admin/APublic/verify/" title="点击刷新验证码" alt="验证码" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="btn_sub_login"></div>
+</div>
+
+<div id="dialog" title="系统消息"></div>
+<div id="dialog_confirm" title="系统消息"></div>
+
+<div id="dialog_prograssbar" title="系统进度框">
+    <div class="progress-label">请稍候...</div>
+    <div id="progressbar"></div>
+</div>
+
+<script type="text/javascript" src="/public/JqueryUI/ui/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/public/JqueryUI/ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/public/JqueryUI/ui/jquery-ui-timepicker-addon.js"></script>
+
+<script type="text/javascript" src="/public/Chosen/chosen.jquery.js"></script>
+
+<script type="text/javascript" src="/public/Js/jquery.validate.js"></script>
+<script type="text/javascript" src="/public/Js/jquery.validate.msgcn.js"></script>
+<script type="text/javascript" src="/public/Js/jquery.form.js"></script>
+
+<script src="/public/Admin/Js/simplify/simplify.js"></script>
+<script src="/public/Admin/Js/jquery.slimscroll.min.js"></script>
+<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+
+    var GROUP = "/Admin";
+    var LAN = "<?php echo config("LAN"); ?>";
+    var PUBLIC = "/public";
+    if ( ''!=LAN ) {
+        LAN = LAN + '/';
+    }
+</script>
+
+<script type="text/javascript" src="/public/Js/common.js"></script>
+<script type="text/javascript" src="/public/Admin/Js/common.js"></script>
+
+
+
+<script type="text/javascript" src="/public/Admin/Js/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<table class="list">
+    <tr><th colspan="2" class="graybar"></th></tr>
+    <tr><td colspan="2" class="title">系统信息</td></tr>
+    <?php if(is_array($info)): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+    <tr>
+        <td width="15%">
+            <?php echo ($key); ?>
+        </td>
+        <td><?php echo ($vo); ?></td>
+    </tr>
+    <?php endforeach; endif; else: echo "" ;endif; ?>
+    <tr><th colspan="2" class="graybar"></th></tr>
+</table>
