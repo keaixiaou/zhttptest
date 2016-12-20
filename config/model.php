@@ -8,6 +8,5 @@
 
 return [
   'model'   =>  [
-        'Mytest' => model\Test::class,
   ],
 ];
