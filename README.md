@@ -4,6 +4,8 @@
 
 ###线上地址：
 http://zhttp.jeekzx.com/Admin
+账号：admin
+密码：admin
 
 ###实现模块：
 1.登录登出
