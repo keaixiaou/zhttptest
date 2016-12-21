@@ -12,7 +12,6 @@ $(function(){
 	}
 	// post-submit callback
 	function showResponse(responseText, statusText, xhr, $form)  {
-		console.log(responseText);
 		if ( !responseText.status ) {
 			my_show_dialog( "登录失败！</p><p>" + responseText.info );
 		}
