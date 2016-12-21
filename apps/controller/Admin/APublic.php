@@ -21,7 +21,7 @@ class APublic extends Admin{
      */
     public function login(){
         if($this->input->session[config('admin','USER_AUTH_KEY')]){
-           return $this->redirect(url('admin/index/index'));
+           return $this->redirect(url('admin'));
         }else{
             $this->display();
         }
