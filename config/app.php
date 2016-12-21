@@ -25,6 +25,7 @@ return array(
     'session'=> array(
         'enable' => true,
         'adapter' => 'File',
+        'path' => 'session_tmp',
         //这里是file,如果要使用redis存储session改为Redis即可
         'redis' => [
             'ip' => '127.0.0.1',

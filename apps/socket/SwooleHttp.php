@@ -93,6 +93,7 @@ class SwooleHttp extends ZSwooleHttp
             Db::getInstance()->initSessionRedisPool($workerId, Config::get('session'));
             App::init(Factory::getInstance(\ZPHP\Core\DI::class));
             Route::init();
+            Session::init();
             $this->coroutineTask = Factory::getInstance(\ZPHP\Coroutine\Base\CoroutineTask::class);
             $this->dispatcher = Factory::getInstance(\ZPHP\Core\Dispatcher::class);
             $this->requestDeal = Factory::getInstance(\ZPHP\Core\Request::class, $this->coroutineTask);
