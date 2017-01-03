@@ -10,6 +10,7 @@
 return [
     'mongo' => [
         'host' => '127.0.0.1',
+        'asyn_max_count' => 5,
         'port' => 50000,
         'database' => 'test',
         ],

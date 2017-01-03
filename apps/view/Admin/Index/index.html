@@ -141,32 +141,40 @@
                     <li class="menu-header">
                         Main Menu
                     </li>
-                    <?php if(is_array($menu)): $i = 0; $__LIST__ = $menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$m): $mod = ($i % 2 );++$i;?><li class="openable bg-palette<?php echo ($key%4+1); ?>">
-                    <a href="javascript:;">
-                        <span class="menu-content block">
-                            <span class="menu-icon">
-                                <i class="block fa <?php echo ($icon[$key]); ?> fa-lg"></i></span>
-                            <span class="text m-left-sm"><?php echo ($m["title"]); ?></span>
-                            <span class="submenu-icon"></span>
-                        </span>
-                        <span class="menu-content-hover block">
-                            Form
-                        </span>
-                    </a>
-                    <?php if(!empty($m["list"])): ?><ul class="submenu bg-palette4">
-                    <?php if(is_array($m["list"])): $i = 0; $__LIST__ = $m["list"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$mv): $mod = ($i % 2 );++$i; if(($menuNow) == $mv["name"]): ?><li class="menu_item cur" tag="<?php echo ($mv["name"]); ?>">
-                    <a href="javascript:;" url="<?php echo ($mv["name"]); ?>" >
-                    <span class="submenu-label"><?php echo ($mv["title"]); ?></span>
-                    </a>
-                    </li>
-                    <?php else: ?>
-                    <li class="menu_item" tag="<?php echo ($mv["name"]); ?>">
-                    <a href="javascript:;" url="<?php echo ($mv["name"]); ?>" >
-                    <span class="submenu-label"><?php echo ($mv["title"]); ?></span>
-                    </a>
-                    </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                </ul><?php endif; ?>
-                </li><?php endforeach; endif; else: echo "" ;endif; ?>
+                    <volist name="menu" id="m">
+                        <li class="openable bg-palette{$key%4+1}">
+                            <a href="javascript:;">
+									<span class="menu-content block">
+										<span class="menu-icon">
+                                            <i class="block fa {$icon[$key]} fa-lg"></i></span>
+										<span class="text m-left-sm">{$m.title}</span>
+										<span class="submenu-icon"></span>
+									</span>
+									<span class="menu-content-hover block">
+										Form
+									</span>
+                            </a>
+                            <notempty name="m.list" >
+                                <ul class="submenu bg-palette4">
+                                    <volist name="m.list" id="mv">
+                                        <eq name="menuNow" value="$mv.name">
+                                            <li class="menu_item cur" tag="{$mv.name}">
+                                                <a href="javascript:;" url="{$mv.name}" >
+                                                    <span class="submenu-label">{$mv.title}</span>
+                                                </a>
+                                            </li>
+                                            <else/>
+                                            <li class="menu_item" tag="{$mv.name}">
+                                                <a href="javascript:;" url="{$mv.name}" >
+                                                    <span class="submenu-label">{$mv.title}</span>
+                                                </a>
+                                            </li>
+                                        </eq>
+                                    </volist>
+                                </ul>
+                            </notempty>
+                        </li>
+                    </volist>
                 </ul>
             </div>
             <div class="sidebar-fix-bottom clearfix">
@@ -205,7 +213,7 @@
 
     <div class="main-container " style="top: 30px;width:100%">
         <div class="padding-md content" style="width: 100%;">
-            <?php echo ($content); ?>
+            {$content}
         </div>
     </div>
 

@@ -20,12 +20,12 @@ return array(
         'worker_num' => 1,                                 //工作进程数
         'max_request' => 0,                            //单个进程最大处理请求数
         'debug_mode' => 1,
-        'log_file' => ROOTPATH.'/log/swoole.log',//打开调试模式
+        'log_file' => ROOTPATH.'/tmp/log/swoole.log',//打开调试模式
     ),
     'session'=> array(
         'enable' => true,
         'adapter' => 'File',
-        'path' => 'session_tmp',
+        'path' => ROOTPATH.'/tmp/session',
         //这里是file,如果要使用redis存储session改为Redis即可
         'redis' => [
             'ip' => '127.0.0.1',
@@ -47,7 +47,7 @@ return array(
 
     'project'=>array(
         'name'=>'zhttp',                 //项目名称。(会做为前缀，隔离不同的项目)
-        'view_mode'=>'Stringv',   		//view模式
+        'view'=>['tag'=>true],   		//view模式
         'ctrl_name'=>'a',				//ctrl参数名
         'method_name'=>'m',				//method参数名    http://host/?{action_name}=main\main&{method_name}=main
         'pid_path'  => ROOTPATH.'/webroot',
